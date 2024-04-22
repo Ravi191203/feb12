@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup and Login Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="form-container">
+    <ul class="tabs">
+      <li class="active" data-tab="signup">Signup</li>
+      <li data-tab="login">Login</li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="signup" class="tab active">
+        <h1>Sign Up</h1>
+        <form action="signup.php" method="post">
+          <input type="text" name="username" placeholder="Username" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="submit" value="Sign Up">
+        </form>
+      </div>
+
+      <div id="login" class="tab">
+        <h1>Login</h1>
+        <form action="login.php" method="post">
+          <input type="text" name="username" placeholder="Username" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="submit" value="Login">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll('.tabs li');
+  const tabContent = document.querySelectorAll('.tab');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((tab) => {
+        tab.classList.remove('active');
+      });
+
+      tab.classList.add('active');
+
+      const tabId = tab.getAttribute('data-tab');
+
+      tabContent.forEach((content) => {
+        content.classList.remove('active');
+      });
+
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
+
+<style>
+  /* CSS styles */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  width: 400px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tabs li {
+  list-style: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tabs li.active {
+  background-color: #ccc;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive design */
+
+@media screen and (max-width: 500px) {
+  .form-container {
+    width: 100%;
+  }
+}
+</style>

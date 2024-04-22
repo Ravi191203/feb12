@@ -1,0 +1,77 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    background-image: url(/assets/images/pexels-iriser-1707215.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#main-heading {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 0fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#todo-input, #todo-date {
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.btn-delete, .btn-todo {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover, .btn-todo:hover {
+    background-color: #85b5e9;
+}
+
+.todo-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 0fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 20px;
+}
+
+.todo-container span {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.todo-container button {
+    background-color: #1a1818;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.todo-container button:hover {
+    background-color: #bd2130;
+}
